@@ -1,8 +1,9 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-puts <<~GREETING
+print <<~GREETING.chomp + ' '
   Hello, world!
-  How are you doing?
-  Goodbye!
+  What is your name?
 GREETING
+name = gets.chomp
+puts 'Welcome ' + name + '!'
