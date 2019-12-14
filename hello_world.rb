@@ -3,6 +3,7 @@
 
 puts <<~GREETING
   Hello, world!
-  How are you doing?
-  Goodbye!
+  What is your name?
 GREETING
+name = gets
+puts 'Welcome ' + name + '!'
