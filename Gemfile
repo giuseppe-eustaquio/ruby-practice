@@ -1,19 +1,21 @@
+# frozen_string_literal: true
+
 source "https://rubygems.org"
 
-git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
+git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
-# linter
+# Linter
 gem "rubocop"
-gem "rubocop-rspec"
 gem "rubocop-performance"
 gem "rubocop-rake"
+gem "rubocop-rspec"
 
-# testing
+# Testing
 gem "rspec"
 
-# irb replacement
+# Irb replacement
 gem "pry"
 gem "pry-byebug"
 
-# misc
+# QoL
 gem "awesome_print"
