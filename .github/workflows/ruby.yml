@@ -13,8 +13,15 @@ jobs:
       uses: actions/setup-ruby@v1
       with:
         ruby-version: 2.6.x
-    - name: Build and test with Rake
+    - name: Build and test with Rspec
       run: |
         gem install bundler
         bundle install --jobs 4 --retry 3
-        bundle exec rake
+        bundle exec rspec
+    - name: Rubocop Linter
+      uses: andrewmcodes/rubocop-linter-action@v2.0.0
+      with:
+        additional_gems: 'rubocop-performance rubocop-rspec rubocop-rake'
+        fail_level: 'warning'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
