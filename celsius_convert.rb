@@ -1,15 +1,18 @@
 #!/usr/bin/env ruby 
 
 print "Hello. Please enter a Celsius value: "
-
-celsius = gets.to_i
-
+celsius = gets.chomp
+begin
+    celsius = Integer(celsius)
 fahrenheit = (celsius * 9 / 5) + 32
-
 puts "Saving result to output file 'temp.out'"
-
-fh = File.new("temp.out", "w")
-
-fh.puts fahrenheit
-
-fh.close
+    begin    
+        fahrenheit_file = File.new("temp.out", "w")
+        fahrenheit_file.puts fahrenheit
+        fahrenheit_file.close
+    rescue
+        print "Unable to save"
+    end
+rescue
+    print "Invalid Input"
+end
