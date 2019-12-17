@@ -13,5 +13,5 @@ begin
     print "\n non-Military Time:" + (military_time - 1200).to_s + 'PM'
   end
 rescue
-  puts 'Invalid Input!'
+  puts 'Invalid input!'
 end
