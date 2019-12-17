@@ -7,7 +7,6 @@ AllCops:
     - bin/*
 
 require:
-  - rubocop-rails
   - rubocop-rspec
   - rubocop-performance
   - rubocop-rake
