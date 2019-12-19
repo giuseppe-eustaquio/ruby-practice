@@ -1,3 +1,4 @@
+# Converts military time to 12-hour format
 class MilitaryTime
   attr_reader :hours, :minutes, :period
 
@@ -7,7 +8,6 @@ class MilitaryTime
 
     @hours = calculate_hours(military_time)
     @minutes = calculate_minutes(military_time)
-    @period = calculate_period
   end
 
   def call
@@ -19,6 +19,8 @@ class MilitaryTime
 
   def calculate_hours(military_time)
     hours = military_time / 100
+    @period = calculate_period(hours)
+
     case hours
     when 0 then 12
     when 1..12 then hours
@@ -33,7 +35,7 @@ class MilitaryTime
     minutes
   end
 
-  def calculate_period
+  def calculate_period(hours)
     (hours / 12).zero? ? "AM" : "PM"
   end
 end
