@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require MilitaryTime
+require_relative "military_time"
 
 print "Input military time (xxxx): "
 
