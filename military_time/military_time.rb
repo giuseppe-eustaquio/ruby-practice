@@ -10,7 +10,7 @@ class MilitaryTime
     @minutes = calculate_minutes(military_time)
   end
 
-  def call
+  def to_s
     format("%<hh>02d:%<mm>02d %<xx>s",
            hh: hours, mm: minutes, xx: period)
   end
