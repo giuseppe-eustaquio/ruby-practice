@@ -36,6 +36,6 @@ class MilitaryTime
   end
 
   def calculate_period(hours)
-    (hours / 12).zero? ? "AM" : "PM"
+    hours < 12 ? "AM" : "PM"
   end
 end
