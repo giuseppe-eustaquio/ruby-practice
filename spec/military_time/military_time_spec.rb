@@ -1,5 +1,5 @@
 require "spec_helper"
-require_relative "../../military_time/military_time.rb"
+require_relative "../../military_time/military_time"
 
 describe MilitaryTime do
   describe "#to_s" do
