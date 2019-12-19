@@ -1,4 +1,3 @@
-require "spec_helper"
 require_relative "../../military_time/military_time"
 
 describe MilitaryTime do
