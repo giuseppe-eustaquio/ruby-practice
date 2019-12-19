@@ -23,7 +23,7 @@ Style/Alias:
 Style/ArrayJoin:
   Description: 'Use Array#join instead of Array#*.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#array-join'
-  Enabled: true
+  Enabled: false
 
 Style/AsciiComments:
   Description: 'Use only ascii symbols in comments.'
@@ -73,13 +73,13 @@ Style/ClassVars:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-class-vars'
   Enabled: true
 
-Style/CollectionMethods:
-  Enabled: true
-  PreferredMethods:
-    find: find
-    inject: reduce
-    collect: map
-    find_all: select
+# Style/CollectionMethods:
+#   Enabled: true
+#   PreferredMethods:
+#     find: find
+#     inject: reduce
+#     collect: collect
+#     find_all: select
 
 Style/ColonMethodCall:
   Description: 'Do not use :: for method call.'
@@ -123,7 +123,7 @@ Style/PreferredHashMethods:
 
 Style/Documentation:
   Description: 'Document classes and non-namespace modules.'
-  Enabled: true
+  Enabled: false
 
 Style/DoubleNegation:
   Description: 'Checks for uses of double negation (!!).'
