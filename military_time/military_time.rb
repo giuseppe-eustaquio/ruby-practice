@@ -21,11 +21,8 @@ class MilitaryTime
     hours = military_time / 100
     @period = calculate_period(hours)
 
-    case hours
-    when 0 then 12
-    when 1..12 then hours
-    when 13..23 then hours % 12
-    end
+    # 00xx and 12xx are both 12:xx in the 12-hour format.
+    [0, 12].include?(hours) ? 12 : hours % 12
   end
 
   def calculate_minutes(military_time)
