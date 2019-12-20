@@ -1,6 +1,6 @@
-require_relative "../../military_time/military_time"
+require_relative "../../military_time_conversion/twelve_hour_time"
 
-describe MilitaryTime do
+describe MilitaryTimeConversion::TwelveHourTime do
   describe "#to_s" do
     subject(:mil_time) { described_class }
 
