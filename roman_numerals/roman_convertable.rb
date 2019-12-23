@@ -15,14 +15,16 @@ module RomanConvertable
     "I" => 1
   }.freeze
 
-  def to_roman
-    num = self
-    raise(RangeError, "Number must be from 1-3999") unless num < 4000 && num.positive?
+  refine Integer do
+    def to_roman
+      num = self
+      raise(RangeError, "Number must be from 1-3999") unless num < 4000 && num.positive?
 
-    "".tap do |roman_numeral|
-      ROMAN_DIGITS.each do |key, value|
-        roman_numeral << key * (num / value)
-        num %= value
+      "".tap do |roman_numeral|
+        ROMAN_DIGITS.each do |key, value|
+          roman_numeral << key * (num / value)
+          num %= value
+        end
       end
     end
   end

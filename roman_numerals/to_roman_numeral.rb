@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 require_relative "roman_convertable"
 
-Integer.include RomanConvertable
+using RomanConvertable
 
 print "Enter a number to convert to roman numerals: "
 number = gets.to_i
