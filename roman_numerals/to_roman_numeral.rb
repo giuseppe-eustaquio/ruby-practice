@@ -3,10 +3,10 @@ require_relative "roman_convertable"
 
 Integer.include RomanConvertable
 
-print "Enter a number: "
+print "Enter a number to convert to roman numerals: "
 number = gets.to_i
 begin
-  puts number.to_roman
+  puts "#{number} is #{number.to_roman} in roman numerals"
 rescue RangeError => e
   puts e.message
 end
