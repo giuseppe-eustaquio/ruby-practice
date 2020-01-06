@@ -1,7 +1,8 @@
 class PasswordValidator
+  class << self
   MINIMUM_PASSWORD_LENGTH = 8
 
-  def self.password_strength(password)
+  def password_strength(password)
     case password
     when very_strong?(password)
       "very strong"
@@ -48,11 +49,12 @@ class PasswordValidator
   end
 
   def weak?(password)
-    contains_letter(password)
+    contains_letter?(password)
   end
 
   def very_weak?(password)
     contains_number?(password)
   end
 
+end
 end 
