@@ -3,7 +3,7 @@ class PasswordValidator
   MINIMUM_PASSWORD_LENGTH = 8
 
   def password_strength(password)
-    case password
+    case
     when very_strong?(password)
       "very strong"
     when strong?(password)
