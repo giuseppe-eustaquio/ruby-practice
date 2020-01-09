@@ -13,23 +13,23 @@ describe PasswordValidator do
       let(:single_space) { " "}
 
       it "tests very strong password" do
-        expect(pw_vil.new(very_strong_password).password_strength).to eql("very strong")
+        expect(pw_vil.password_strength(very_strong_password)).to eql("very strong")
       end
 
       it "tests strong password" do
-        expect(pw_vil.new(strong_password).password_strength).to eql("strong")
+        expect(pw_vil.password_strength(strong_password)).to eql("strong")
       end
       it "tests weak password" do
-        expect(pw_vil.new(weak_password).password_strength).to eql("weak")
+        expect(pw_vil.password_strength(weak_password)).to eql("weak")
       end
       it "tests very weak password" do
-        expect(pw_vil.new(very_weak_password).password_strength).to eql("very weak")
+        expect(pw_vil.password_strength(very_weak)).to eql("very weak")
       end
       it "tests empty password" do
-        expect(pw_vil.new(empty_password).password_strength).to eql("very weak")
+        expect(pw_vil.password_strength(empty_password)).to eql("very weak")
       end
       it "tests single space password" do
-        expect(pw_vil.new(single_space).password_strength).to eql("very weak")
+        expect(pw_vil.password_strength(single_space)).to eql("very weak")
       end
    end
   end
