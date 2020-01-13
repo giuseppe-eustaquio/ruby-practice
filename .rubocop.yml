@@ -214,11 +214,6 @@ Style/LineEndConcatenation:
     line end.
   Enabled: true
 
-Metrics/LineLength:
-  Description: "Limit lines to 80 characters."
-  StyleGuide: "https://github.com/bbatsov/ruby-style-guide#80-character-limits"
-  Max: 120
-
 Metrics/MethodLength:
   Description: "Avoid methods longer than 10 lines of code."
   StyleGuide: "https://github.com/bbatsov/ruby-style-guide#short-methods"
@@ -418,6 +413,11 @@ Style/WordArray:
   Enabled: true
 
 # Layout
+
+Layout/LineLength:
+  Description: "Limit lines to 80 characters."
+  StyleGuide: "https://github.com/bbatsov/ruby-style-guide#80-character-limits"
+  Max: 120
 
 Layout/ParameterAlignment:
   Description: "Here we check if the parameters on a multi-line method call or definition are aligned."
