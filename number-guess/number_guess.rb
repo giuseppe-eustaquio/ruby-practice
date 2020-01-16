@@ -1,8 +1,15 @@
 #!/usr/bin/env ruby
 require_relative "number_game"
-puts "Let's Play Guess the Number"
-print "Select difficulty (1,2,3):"
+my_str = <<-Foo
+Let's Play Guess the Number
+Select difficulty (1,2,3):
+Foo
 
-level = gets.chomp
 
-puts GuessNumber.random_number
+
+print my_str
+
+level = gets.to_i
+
+game = RandomNumberGame.new(level)
+game.new_game
