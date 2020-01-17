@@ -5,7 +5,18 @@ class RandomNumberGame
   EASY_LEVEL = 10
   NORMAL_LEVEL = 100
   INSANE_LEVEL = 1000
+  
+ def start_game
+      loop do
+        guess()
+        compare_guess() 
 
+        if compare_guess == congrats 
+          break
+        end
+      end
+   end
+  
   def initialize(level)
     max_number = case level
                  when 1 then EASY_LEVEL
@@ -14,29 +25,35 @@ class RandomNumberGame
                  else raise ArgumentError, 'You have entered an invalid level'
                  end
     @random_number = rand(1..max_number)
-    
-    def new_game
-puts "I have my number. What's your guess? "
-    guess = 0
-tries = tries.to_i
-   loop do
-     guess = gets.chomp.to_i
-    if guess == random_number
-      puts "You got it in #{tries.to_i} guesses!"
-      break
-    elsif guess > random_number
-      tries = tries + 1
-      puts "Too high. Guess again: "
-    elsif guess < random_number
-      tries = tries + 1
-      puts "Too low. Guess again: "
-    else
-      puts "your guess is #{guess.to_i}"
-      puts "Correct number: #{random_number.to_i}"
-      puts "Tries: #{tries.to_i}"
-      puts  "Invalid Input"
-    end
-    end
+    @guess = 0
+    @tries = 1
+    start_game()
    end
-  end 
-end
+
+    def guess
+     @guess = gets.chomp.to_i
+    end
+
+    def congrats
+      if @tries == 1
+        "You got it in your first guess!"
+      else
+        "You got it in #{tries} guesses!"
+    end
+  end
+
+    def compare_guess
+    if @guess == random_number
+      congrats
+    elsif guess > random_number
+      @tries = @tries.to_i + 1
+      "Too high. Guess again: "
+    elsif @guess < random_number
+      @tries = @tries.to_i + 1
+     "Too low. Guess again: "
+    else
+    "Invalid Input"
+    end
+    end
+
+   end 

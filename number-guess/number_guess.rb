@@ -5,11 +5,10 @@ Let's Play Guess the Number
 Select difficulty (1,2,3):
 Foo
 
-
-
 print my_str
 
 level = gets.to_i
 
 game = RandomNumberGame.new(level)
-game.new_game
+game.start_game
+print "I have a number. What's your guess?: "
