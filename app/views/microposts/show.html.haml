@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @micropost.title
+%p
+  %b Text:
+  = @micropost.text
+%p
+  %b User:
+  = @micropost.user
+
+= link_to 'Edit', edit_micropost_path(@micropost)
+\|
+= link_to 'Back', microposts_path

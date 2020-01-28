@@ -1,0 +1,19 @@
+= form_for @micropost do |f|
+  - if @micropost.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@micropost.errors.count, "error")} prohibited this micropost from being saved:"
+      %ul
+        - @micropost.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :text
+    = f.text_field :text
+  .field
+    = f.label :user
+    = f.text_field :user
+  .actions
+    = f.submit 'Save'
