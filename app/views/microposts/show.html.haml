@@ -1,14 +1,12 @@
 %p#notice= notice
 
 %p
-  %b Title:
-  = @micropost.title
-%p
-  %b Text:
-  = @micropost.text
+  %b Content:
+  = @micropost.content
 %p
   %b User:
-  = @micropost.user
+  = @micropost.user_id
+
 
 = link_to 'Edit', edit_micropost_path(@micropost)
 \|

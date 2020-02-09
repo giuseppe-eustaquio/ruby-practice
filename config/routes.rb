@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :microposts
   resources :users
-  root "static_pages#hello"
+  root "users#index"
   get "/goodbye", to: "static_pages#goodbye"
 end

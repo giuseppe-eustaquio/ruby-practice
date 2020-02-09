@@ -5,6 +5,10 @@
 %p
   %strong Email:
   = @user.email
+%p
+  %strong Micropost:
+=@user.microposts.first.content  
+%p
 = link_to 'Edit', edit_user_path(@user)
 |
 = link_to 'Back', users_path
